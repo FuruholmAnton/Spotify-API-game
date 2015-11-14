@@ -39,6 +39,7 @@ $( document ).ready(function() {
           return hashParams;
         }
 
+
         var userProfileSource = document.getElementById('user-profile-template').innerHTML,
             userProfileTemplate = Handlebars.compile(userProfileSource),
             userProfilePlaceholder = document.getElementById('user-profile');
@@ -47,7 +48,15 @@ $( document ).ready(function() {
             playlistTemplate = Handlebars.compile(playlistSource),
             playlistPlaceholder = document.getElementById('playlist');
 
+        
+
         var params = getHashParams();
+
+        if(params == null || 'undefiend'){
+          $('.page-view').removeClass('is-active');
+          $('.page-home').addClass('is-active');
+        }
+        
 
         var access_token = params.access_token,
             refresh_token = params.refresh_token,
@@ -57,6 +66,7 @@ $( document ).ready(function() {
 
         if (error) {
           alert('There was an error during the authentication');
+          
         } else {
           if (access_token) {
             // render oauth info
@@ -71,6 +81,12 @@ $( document ).ready(function() {
                   userProfilePlaceholder.innerHTML = userProfileTemplate(response);
                   getPlayLists(response.id, access_token);
                   sessionStorage.userID = response.id;
+                },
+                error: function(response) {
+                  
+                },
+                complete: function(){
+                  // $('.is-loading').addClass("is-hidden");
                 }
             });
           } else {

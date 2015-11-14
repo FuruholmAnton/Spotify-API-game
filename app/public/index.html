@@ -14,7 +14,14 @@
   </head>
 
   <body>
-    <div class="container page-home page-view is-active">
+    <!-- Loading circle -->
+    <div class="container page-loading page-view is-active">
+      <img src="images/ring.svg" alt="" style="max-width: 200px; margin: 0 auto; display:block;">
+    </div>
+    
+
+
+    <div class="container page-home page-view">
       <div id="login">
         <h1 class="text-center">Test your <span class="green">music</span> knowledge</h1>
         <div class="text-center">
@@ -47,15 +54,14 @@
             <div class="record_reflection"></div>
             <div class="record_inner-circle">
               <!-- <div class="record_play-button"></div> -->
-              <i class="material-icons record-play record_button">play_circle_filled</i>
+              <i class="material-icons is-hidden record-play record_button">play_circle_filled</i>
               <i class="material-icons is-hidden record-pause record_button">pause_circle_filled</i>
+              <img src="images/loading-default.svg" alt="" class="record-loading">
             </div> 
           </div>
         </div>
         <div class="choice">
-          <div class="button-positive choice-item">Bob Dylan</div>
-          <div class="button-positive choice-item">Stevie Wonder</div>
-          <div class="button-positive choice-item">Queen</div>
+          
         </div>
       </div>
     </div>
@@ -63,13 +69,9 @@
 
 
     <!-- Quiz template -->
-    <script id="game-template" type="text/x-handlebars-template">
-      <h1>What artist/band is this?</h1>
-      
+    <script id="choice-template" type="text/x-handlebars-template">
       {{#each items}}
-        <div class="artist-item" data-name="{{this.name}}" data-id="{{this.id}}">
-          <p>{{this.name}}</p>
-        </div>
+        <div class="button-positive choice-item" data-answer="{{answer}}">{{this.artists}}</div>
       {{/each}}
     </script>
 

@@ -53,6 +53,7 @@ p, a, figcaption, li, label{
 }
 img{
 	width: 100%;
+	display: block;
 }
 p+a{
 	text-decoration: underline;

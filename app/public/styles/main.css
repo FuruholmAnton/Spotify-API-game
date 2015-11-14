@@ -147,7 +147,8 @@ p, a, figcaption, li, label {
   font-family: "helvetica", sans-serif; }
 
 img {
-  width: 100%; }
+  width: 100%;
+  display: block; }
 
 p + a {
   text-decoration: underline; }
@@ -223,7 +224,7 @@ form input, form textarea {
   width: 100%; }
 
 .is-hidden {
-  display: none; }
+  display: none !important; }
 
 .home-connect {
   margin-top: 100px; }
@@ -332,6 +333,11 @@ form input, form textarea {
   display: none; }
   .page-view.is-active {
     display: block; }
+
+.is-loading {
+  width: 200px;
+  margin: 0 auto;
+  display: block; }
 
 .nav {
   width: 100%;
