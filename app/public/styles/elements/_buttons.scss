@@ -1,0 +1,40 @@
+%button{
+	padding: 12px 24px;
+	cursor: pointer;
+  background-color: #ccc;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  &:hover{
+
+  }
+}
+
+.button{
+  @extend %button;
+}
+.button-positive{
+  @extend %button;
+  background-color: $green;
+  &:hover{
+   background-color: darken($green, 10%); 
+  }
+}
+.button-negative{
+  @extend %button;
+  background-color: $red;
+  &:hover{
+   background-color: darken($red, 10%); 
+  }
+}
+
+button{
+	@extend %button;
+
+}
+input[type="button"]{
+	@extend %button;
+}
+input[type="submit"]{
+	@extend %button;
+}

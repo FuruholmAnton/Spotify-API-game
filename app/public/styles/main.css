@@ -1,0 +1,350 @@
+/*	
+*       /\
+*      /  \
+*     /    \
+*    /  /\  \
+*   /  ____  \
+*  /__/	   \__\
+*
+* Built by Anton Furuholm
+*
+*
+*/
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg); } }
+@keyframes rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg); } }
+/***  Rotates infinite
+      animation-name:             rotate; 
+      animation-duration:         10s; 
+      animation-iteration-count:  infinite;
+      animation-timing-function: linear;
+*/
+/* Background */
+/* 
+* Breakpoints 
+* http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+*/
+/*
+* @function function-name($a, $b){
+*   @return $a + $b
+* }
+* 
+* .my-module {
+*   @include function-name(10 + 21);
+* }
+*/
+/*
+*
+* http://hugogiraudel.com/2013/08/12/sass-functions/
+*
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 16px; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+
+body {
+  font-family: "helvetica", sans-serif;
+  background-color: #fff;
+  height: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "helvetica", serif;
+  font-weight: bold; }
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 1em 0 .5em 0; }
+
+h1 {
+  font-size: 40px; }
+  @media (min-width: 500px) {
+    h1 {
+      font-size: 50px; } }
+
+h2 {
+  font-size: 20px; }
+  @media (min-width: 500px) {
+    h2 {
+      font-size: 30px; } }
+
+h3 {
+  font-size: 16px; }
+  @media (min-width: 500px) {
+    h3 {
+      font-size: 24px; } }
+
+p, a, figcaption, li, label {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #0097ad;
+  font-family: "helvetica", sans-serif; }
+
+img {
+  width: 100%; }
+
+p + a {
+  text-decoration: underline; }
+
+p + p {
+  margin-top: 1rem; }
+
+@font-face {
+  font-family: "sign painter";
+  src: url(/fonts/SignPainter-HouseScript.otf) format("opentype");
+  font-weight: 100; }
+.button, .button-positive, .button-negative, button, input[type="button"], input[type="submit"] {
+  padding: 12px 24px;
+  cursor: pointer;
+  background-color: #ccc;
+  color: #fff;
+  position: relative;
+  display: inline-block; }
+
+.button-positive {
+  background-color: #4CAF50; }
+  .button-positive:hover {
+    background-color: #3d8b40; }
+
+.button-negative {
+  background-color: #F44336; }
+  .button-negative:hover {
+    background-color: #ea1c0d; }
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc; }
+
+form input, form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  margin: 4px 0 10px 0;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: "helvetica", sans-serif;
+  resize: none; }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px; }
+
+.text-center {
+  text-align: center; }
+
+.green {
+  color: #4CAF50; }
+
+.red {
+  color: #F44336; }
+
+.block {
+  display: block; }
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .flex-between {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+
+.full-width {
+  width: 100%; }
+
+.is-hidden {
+  display: none; }
+
+.home-connect {
+  margin-top: 100px; }
+
+.playlist-item {
+  cursor: pointer;
+  padding: 20px;
+  border-bottom: 1px solid #eee; }
+
+.record_canvas {
+  text-align: center;
+  margin-top: 40px; }
+.record_outer-circle {
+  width: 300px;
+  height: 300px;
+  background-color: #ddd;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 300px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden; }
+.record_inner-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+.record_play-button {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 25px 43.3px;
+  border-color: transparent transparent transparent #039c4a;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 56%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .record_play-button:hover {
+    border-color: transparent transparent transparent #fff; }
+.record_button {
+  font-size: 120px;
+  color: #4CAF50;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer; }
+  .record_button:hover {
+    color: #999; }
+  .record_button.record-pause {
+    color: #9E9E9E; }
+.record_reflection {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 300px 50px;
+  border-color: transparent transparent #eee transparent;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  -webkit-clip-path: circle(66% at 50% 0%);
+          clip-path: circle(66% at 50% 0%);
+  -webkit-transition: none;
+          transition: none; }
+  .is-playing .record_reflection {
+    top: 50%;
+    left: 33%;
+    -webkit-animation-name: rotate;
+            animation-name: rotate;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+
+.choice {
+  max-width: 300px;
+  margin: 0 auto; }
+  .choice-item {
+    width: 100%;
+    margin-top: 10px; }
+
+.page-view {
+  display: none; }
+  .page-view.is-active {
+    display: block; }
+
+.nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #efefef;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  .nav-item {
+    padding: 20px;
+    display: block; }
+
+/*# sourceMappingURL=main.css.map */

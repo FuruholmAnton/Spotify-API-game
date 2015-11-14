@@ -1,0 +1,10 @@
+@import "home";
+@import "playlist";
+@import "game";
+
+.page-view{
+  display: none;
+  &.is-active{
+    display: block;
+  }
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example of the Authorization Code flow with Spotify</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+      
+    </script>
+  </head>
+
+  <body>
+    <div class="container page-home page-view is-active">
+      <div id="login">
+        <h1 class="text-center">Test your <span class="green">music</span> knowledge</h1>
+        <div class="text-center">
+          <a href="/login" class="button-positive home-connect">Connect with Spotify</a>
+        </div>
+        
+      </div>
+      <div id="loggedin text-center">
+        <div id="oauth">
+        </div>
+      </div>
+    </div>
+    
+    <div class="container page-list page-view">
+      <div id="playlist">
+        </div>
+      
+    </div>
+
+    <div class="container page-profile page-view">
+      <div id="user-profile">
+      </div>
+    </div>
+
+    <div class="container page-game page-view">
+      <div id="game">
+        <h1>What artist/band is this?</h1>
+        <div class="record_canvas">
+          <div class="record_outer-circle">
+            <div class="record_reflection"></div>
+            <div class="record_inner-circle">
+              <!-- <div class="record_play-button"></div> -->
+              <i class="material-icons record-play record_button">play_circle_filled</i>
+              <i class="material-icons is-hidden record-pause record_button">pause_circle_filled</i>
+            </div> 
+          </div>
+        </div>
+        <div class="choice">
+          <div class="button-positive choice-item">Bob Dylan</div>
+          <div class="button-positive choice-item">Stevie Wonder</div>
+          <div class="button-positive choice-item">Queen</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Quiz template -->
+    <script id="game-template" type="text/x-handlebars-template">
+      <h1>What artist/band is this?</h1>
+      
+      {{#each items}}
+        <div class="artist-item" data-name="{{this.name}}" data-id="{{this.id}}">
+          <p>{{this.name}}</p>
+        </div>
+      {{/each}}
+    </script>
+
+    <!-- Playlist template -->
+    <script id="playlist-template" type="text/x-handlebars-template">
+      <h1>{{display_name}} Choose your playlist</h1>
+      {{#each items}}
+        <div class="playlist-item flex flex-between data-name="{{this.name}}" data-id="{{this.id}}"">
+          <p>{{this.name}}</p>
+          <i class="material-icons">chevron_right</i>
+        </div>
+      {{/each}}
+    </script>
+
+    <!-- User profile template -->
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <h1>Logged in as {{display_name}}</h1>
+      <div class="media">
+        <div class="pull-left">
+          <img class="media-object" width="150" src="{{images.0.url}}" />
+        </div>
+        <div class="media-body">
+          <dl class="dl-horizontal">
+            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+            <dt>Id</dt><dd>{{id}}</dd>
+            <dt>Email</dt><dd>{{email}}</dd>
+            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+            <dt>Country</dt><dd>{{country}}</dd>
+          </dl>
+        </div>
+      </div>
+    </script>
+
+    
+    <!-- API request -->
+    
+    <script src="scripts/game.js"></script>
+</html>
+

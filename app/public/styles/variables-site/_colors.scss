@@ -1,0 +1,30 @@
+$color-main: #00c4e0;
+$color-main-dark: darken($color-main, 10%);
+$color-main-darkest: darken($color-main, 10%);
+$color-hover-dark: rgba(#000, 0.05);
+$color-beta: $color-main-dark;
+$color-gamma: #736AB4;
+
+$grey-dark: #555;
+$grey-dark-extra: #222;
+$grey-light: #ccc;
+$grey-light-extra: #F7F7F7;
+$grey: #9E9E9E;
+
+$color-error: #910d03;
+$color-error-dark: darken($color-error, 10%);
+$color-error-darkest: darken($color-error, 15%);
+
+$red: #F44336;
+$pink: #E91E63;
+$purple: #9C27B0;
+$blue: #2196F3;
+$indigo: #3F51B5;
+$cyan: #00BCD4;
+$teal: #009688;
+$green: #4CAF50;
+$lime: #CDDC39;
+$yellow: #FFEB3B;
+$amber: #FFC107;
+$orange: #FF9800;
+$brown: #795548;

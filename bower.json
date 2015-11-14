@@ -1,0 +1,24 @@
+{
+  "name": "Spotify_game",
+  "description": "Spotify game",
+  "main": "server.js",
+  "authors": [
+    "Doozer",
+    "Anton Furuholm"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}

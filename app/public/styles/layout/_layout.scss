@@ -1,0 +1,31 @@
+
+@import "header";
+@import "footer";
+@import 'grid';
+
+.text-center{
+  text-align: center;
+}
+.green{
+  color: $green;
+}
+.red{
+  color: $red;
+}
+
+.block{
+  display: block;
+}
+.flex{
+  display: flex;
+  &-between{
+    justify-content: space-between;
+  }
+}
+.full-width{
+  width: 100%;
+}
+
+.is-hidden{
+  display: none;
+}

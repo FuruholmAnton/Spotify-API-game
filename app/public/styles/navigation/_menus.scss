@@ -1,0 +1,12 @@
+.nav{
+  width: 100%;
+  display: flex;
+  background-color: #efefef;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(#000, 0.1);
+  &-item{
+    padding: 20px;
+    display: block;
+  }
+}

@@ -1,0 +1,63 @@
+@import "reset";
+
+
+html {
+
+  box-sizing: border-box;
+  height: 100%;
+  font-size: $font-size-base;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+body{
+	font-family: $font-body;
+	background-color: #fff;
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $font-heading;
+	font-weight: bold;
+	
+}
+h1, h2, h3, h4, h5, h6{
+	padding: 1em 0 .5em 0;
+}
+h1{
+	font-size: 40px;
+	@media (min-width: 500px) {
+		font-size: 50px;
+	}
+}
+h2{
+	font-size: 20px;
+	@media (min-width: 500px) {
+		font-size: 30px;
+	}
+}
+h3{
+	font-size: 16px;
+	@media (min-width: 500px) {
+		font-size: 24px;
+	}
+}
+p, a, figcaption, li, label{
+	font-size: $font-size-base;
+	line-height: 1.4;
+	color: $color-main-dark;
+	font-family: $font-body;
+}
+img{
+	width: 100%;
+}
+p+a{
+	text-decoration: underline;
+}
+p+p{
+	margin-top: 1rem;
+}
+

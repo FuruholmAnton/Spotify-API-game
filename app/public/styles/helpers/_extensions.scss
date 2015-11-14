@@ -1,0 +1,22 @@
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%link-button{
+	
+}
+%error-button{
+	background-color: #e51c23;
+	color: #fff;
+}
+%success-button{
+	background-color: #8bc34a;
+	color: #fff;
+}
