@@ -117,7 +117,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "helvetica", serif;
-  font-weight: bold; }
+  font-weight: 300; }
 
 h1, h2, h3, h4, h5, h6 {
   padding: 1em 0 .5em 0; }
@@ -166,7 +166,10 @@ p + p {
   background-color: #ccc;
   color: #fff;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  border: none;
+  font-size: 1em;
+  margin: 5px 0; }
 
 .button-positive {
   background-color: #4CAF50; }
@@ -233,6 +236,9 @@ form input, form textarea {
   cursor: pointer;
   padding: 20px;
   border-bottom: 1px solid #eee; }
+
+#game h1 {
+  text-align: center; }
 
 .record_canvas {
   text-align: center;
@@ -328,6 +334,49 @@ form input, form textarea {
   .choice-item {
     width: 100%;
     margin-top: 10px; }
+
+.answer {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .answer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    padding: 20px; }
+  .answer-content {
+    background-color: #eee;
+    padding: 10px; }
+  .answer-message {
+    padding: 0 0 1em 0; }
+  .answer-heading {
+    color: #777;
+    padding: 0 0 2px 0;
+    margin: 0 0 .5em 0;
+    border-bottom: 1px solid #fff; }
+  .answer-btn {
+    float: right; }
+  .answer-count-left {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 50%; }
 
 .page-view {
   display: none; }

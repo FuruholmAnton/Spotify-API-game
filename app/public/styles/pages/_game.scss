@@ -1,5 +1,8 @@
 #game{
   // max-width: 400px;
+  h1{
+    text-align: center;
+  }
 }
 
 $inner-circle-width: 100px;
@@ -106,3 +109,74 @@ $inner-circle-width: 100px;
     
   }
 }
+
+$countLeft: 40px;
+.answer{
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(#000, 0.5);
+  &-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+  }
+  &-content{
+    background-color: #eee;
+    padding: 10px;
+  }
+  &-message{
+    padding: 0 0 1em 0;
+  }
+  &-heading{
+    color: #777;
+    padding: 0 0 2px 0;
+    margin: 0 0 .5em 0;
+    border-bottom: 1px solid #fff;
+  }
+  &-btn{
+    float: right;
+  }
+  &-count-left{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: $countLeft;
+    width: $countLeft;
+    text-align: center;
+    line-height: $countLeft;
+    background-color: $green;
+    color: #fff;
+    border-radius: 50%;
+  }
+}
+.gameover{
+  &-btn{
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

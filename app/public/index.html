@@ -2,12 +2,14 @@
 <html>
   <head>
     <title>Example of the Authorization Code flow with Spotify</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="scripts/main.js"></script>
+
     <script>
       
     </script>
@@ -48,7 +50,7 @@
 
     <div class="container page-game page-view">
       <div id="game">
-        <h1>What artist/band is this?</h1>
+        <h1>Who's playing?</h1>
         <div class="record_canvas">
           <div class="record_outer-circle">
             <div class="record_reflection"></div>
@@ -60,18 +62,42 @@
             </div> 
           </div>
         </div>
-        <div class="choice">
-          
+        <div class="choice">  
         </div>
       </div>
     </div>
 
 
+    <div class="answer">
+      <div id="answer" class="answer-container">
+        
+      </div>
+    </div>
+
+  
+
+    <!-- gameover template -->
+    <script id="gameover-template" type="text/x-handlebars-template">
+        <h2 class="gameover-heading">Congratz, you have finished the game!</h2> 
+        <p class="gameover-count">You got {{count}}/10 correct</p>
+        <button class="gameover-btn button-positive">New game</button>
+    </script>
+
+    <!-- Answer template -->
+    <script id="answer-template" type="text/x-handlebars-template">
+        <div class="answer-count-left">{{count}}/10</div>
+        <h2 class="answer-message answer-{{class}}">{{message}}</h2> 
+        <div class="answer-content">
+          <h3 class="answer-heading">Answer:</h3>
+          <p class="answer-text">{{answer}}</p>
+        </div>
+        <button class="answer-btn button-positive">Next</button>
+    </script>
 
     <!-- Quiz template -->
     <script id="choice-template" type="text/x-handlebars-template">
       {{#each items}}
-        <div class="button-positive choice-item" data-answer="{{answer}}">{{this.artists}}</div>
+        <div class="button-positive choice-item" data-answer="{{answer}}" data-trackID="{{track}}">{{this.artists}}</div>
       {{/each}}
     </script>
 
