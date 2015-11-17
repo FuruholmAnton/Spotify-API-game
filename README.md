@@ -4,4 +4,4 @@ Do you know the artist/band behind the music you listen to?
 
 Built with Spotify's API, handlebarsJS and Express.
 
-#OBS! in development
+Works, but be gentle. this was make on 2 days. 
