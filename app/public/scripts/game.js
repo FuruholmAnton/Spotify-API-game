@@ -146,8 +146,12 @@ var game = {
         console.log("can play");
         $(".record-play").removeClass('is-hidden');
         $(".record-loading").addClass('is-hidden');
-
         
+      });
+      game.track.addEventListener("ended", function(){
+        $('.record-play').addClass('is-hidden');
+        $('.record-pause').addClass('is-hidden');
+        $('.record_canvas').removeClass('is-playing');
       });
 
       var options ={
