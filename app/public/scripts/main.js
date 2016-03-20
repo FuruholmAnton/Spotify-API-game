@@ -40,10 +40,6 @@ $( document ).ready(function() {
         }
 
 
-        var userProfileSource = document.getElementById('user-profile-template').innerHTML,
-            userProfileTemplate = Handlebars.compile(userProfileSource),
-            userProfilePlaceholder = document.getElementById('user-profile');
-
         var playlistSource = document.getElementById('playlist-template').innerHTML,
             playlistTemplate = Handlebars.compile(playlistSource),
             playlistPlaceholder = document.getElementById('playlist');
@@ -77,8 +73,7 @@ $( document ).ready(function() {
                   'Authorization': 'Bearer ' + access_token
                 },
                 success: function(response) {
-                  console.log(response);
-                  userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+                  // console.log(response);
                   getPlayLists(response.id, access_token);
                   sessionStorage.userID = response.id;
                 },
@@ -102,14 +97,16 @@ $( document ).ready(function() {
                 'Authorization': 'Bearer ' + access_token
               },
               success: function(response) {
-                console.log(response);
+                // console.log(response);
                 $('.page-view.is-active').removeClass('is-active');
                 $('.page-list').addClass('is-active');
 
                 playlistPlaceholder.innerHTML = playlistTemplate(response);
 
                 game.init();
-                
+                if($('.playlist-item').length === 0){
+                  $('.playlist-empty').show();
+                }
               }
           });
         }

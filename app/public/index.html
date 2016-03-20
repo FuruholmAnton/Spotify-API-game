@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
+    <title>Spotify game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -49,6 +50,7 @@
     </div>
 
     <div class="container page-game page-view">
+      <i class="material-icons game-exit">clear</i>
       <div id="game">
         <h1>Who's playing?</h1>
         <div class="record_canvas">
@@ -88,7 +90,7 @@
         <div class="answer-count-left">{{count}}/10</div>
         <h2 class="answer-message answer-{{class}}">{{message}}</h2> 
         <div class="answer-content">
-          <h3 class="answer-heading">Answer:</h3>
+          <h3 class="answer-heading">Correct answer:</h3>
           <p class="answer-text">{{answer}}</p>
         </div>
         <button class="answer-btn button-positive">Next</button>
@@ -110,27 +112,7 @@
           <i class="material-icons">chevron_right</i>
         </div>
       {{/each}}
-    </script>
-
-    <!-- User profile template -->
-    <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
-      <div class="media">
-        <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
-        </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-            <dt>Id</dt><dd>{{id}}</dd>
-            <dt>Email</dt><dd>{{email}}</dd>
-            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-            <dt>Country</dt><dd>{{country}}</dd>
-          </dl>
-        </div>
-      </div>
+      <p class="playlist-empty">Make a playlist public to see it here</p>
     </script>
 
     

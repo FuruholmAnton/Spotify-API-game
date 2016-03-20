@@ -16,6 +16,8 @@ var game = {
 
     $('.record-pause').click(game.pauseTrack);
 
+    $('.game-exit').click(game.initNewGame);
+
 
   },
   getListsTracks:function (){
@@ -25,26 +27,18 @@ var game = {
           'Authorization': 'Bearer ' + sessionStorage.access_token
         },
         success: function(response) {
-          console.log(response);
+          // console.log(response);
           $('.page-view.is-active').removeClass('is-active');
           $('.page-game').addClass('is-active');
 
           var allTracks = response.items;
-          // REMOVE TRACKS WITH NO PREVIEW
-          // for (var i = 0; i < allTracks.length; i++) {
-          //   if(allTracks[i].track.preview_url === null){
-
-          //   }
-          // };
-
-          // console.log(allTracks.length);
+          
+          // REMOVES TRACKS WITH NO PREVIEW
           allTracks = jQuery.grep(allTracks, function(value) {
             return value.track.preview_url !== null;
           });
-          // console.log(allTracks.length);
-          var randTrack;
 
-          
+          var randTrack;
 
           for (var i = 0; i < 10; i++) {
             randTrack = allTracks[Math.floor(Math.random() * allTracks.length)];
@@ -104,6 +98,7 @@ var game = {
       };
 
 
+      //Makes sure that the 3 options are always different. Not sure if it's working thought.
       if($(artistArray).not(artistArray2).length === 0 || $(artistArray2).not(artistArray).length === 0){
         var check = false;
         // debugger;
@@ -131,19 +126,16 @@ var game = {
           check = game.checkUniqueArtists2(artistArray, artistArray2, artistArray3);
         }
       }
-      
-      console.log();
-      //CHECK SO NOT THE SAME ARTIST
 
+      // Add audio
       if(game.track == null){
         game.track = new Audio(randTrack.track.preview_url);
       }else{
         game.track.setAttribute('src',randTrack.track.preview_url);
       }
       
-
       game.track.addEventListener("canplay", function(){
-        console.log("can play");
+        // console.log("can play");
         $(".record-play").removeClass('is-hidden');
         $(".record-loading").addClass('is-hidden');
         
@@ -153,6 +145,7 @@ var game = {
         $('.record-pause').addClass('is-hidden');
         $('.record_canvas').removeClass('is-playing');
       });
+
 
       var options ={
         items: []
@@ -258,6 +251,7 @@ var game = {
   checkAnwser:function(that){
     var answer = $(that).data('answer');
 
+    //Removes the track that played from the playlist
     var newList = [];
     var currentID = $('.choice-item[data-answer=true]').data('trackid');
     for (var i = 0; i < game.selectedTracks.length; i++) {
@@ -272,17 +266,6 @@ var game = {
     }else{
       game.wrongAnswer();
     }
-
-    // Removes track from selected tracks
-    // game.selectedTracks = jQuery.grep(game.selectedTracks, function(value) {
-    //   if(value.track.id != $(that).data('trackID')){
-    //     return value;
-    //   }
-      
-    // });
-    
-
-    console.log(game.selectedTracks.length);
 
     $('.answer').show();
     $('.answer-btn').click(function(){

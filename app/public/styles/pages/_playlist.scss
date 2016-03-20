@@ -3,5 +3,9 @@
     cursor: pointer;
     padding: 20px;
     border-bottom: 1px solid #eee;
+
+  }
+  &-empty{
+    display: none;
   }
 }
